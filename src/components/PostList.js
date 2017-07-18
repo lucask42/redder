@@ -14,7 +14,7 @@ class PostList extends Component {
   renderPosts() {
     return this.state.posts.map(post =>
 //update this with a more appropriate id # for posts
-      <PostDetail key={post.title} />
+      <PostDetail key={post.title} post={post} />
     );
   }
 

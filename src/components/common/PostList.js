@@ -7,19 +7,24 @@ class PostList extends Component {
   state = { posts: [] };
 
   componentWillMount() {
-    axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-    .then(response => this.setState({ posts: response.data }));
+    axios.get('https://www.reddit.com/.json')
+    // .then(postsResponseToJson);
+    // axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+    .then(response => this.setState({ posts: response.data.data.children }));
   }
+
+  // postsResponseToJson(response) {
+  //   return response.json()
+  //   .then((responseJson) => responseJson.data.children.map(c => c.data));
+  // }
 
   renderPosts() {
     return this.state.posts.map(post =>
-//update this with a more appropriate id # for posts
-      <PostDetail key={post.title} post={post} />
+      <PostDetail key={post.data.subreddit_id} post={post} />
     );
   }
 
   render() {
-    //console.log(this.state);
     return (
       <ScrollView>
         {this.renderPosts()}

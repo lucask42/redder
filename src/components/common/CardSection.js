@@ -15,10 +15,11 @@ const styles = {
     borderBottomWidth: 1,
     padding: 5,
     backgroundColor: '#fff',
+    elevation: 1,
     justifyContent: 'flex-start',
     flexDirection: 'row',
     position: 'relative'
   }
 };
 
-export default CardSection;
+export { CardSection };

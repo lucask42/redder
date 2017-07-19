@@ -15,11 +15,10 @@ const styles = {
     borderRadius: 2,
     borderColor: '#ddd',
     borderBottomWidth: 0,
-    elevation: 2,
     marginLeft: 5,
     marginRight: 5,
     marginTop: 5
   }
 };
 
-export default Card;
+export { Card };

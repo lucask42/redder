@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
-import PostDetail from './PostDetail';
+import { PostDetail } from './';
 
 class PostList extends Component {
   state = { posts: [] };
@@ -21,12 +21,12 @@ class PostList extends Component {
   render() {
     console.log(this.state);
     return (
-      <View>
+      <ScrollView>
         {this.renderPosts()}
-      </View>
+      </ScrollView>
     );
   }
 
 }
 
-export default PostList;
+export { PostList };

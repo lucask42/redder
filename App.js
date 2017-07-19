@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-//why don't/can't I use AppRegistry
 import { View } from 'react-native';
-import Header from './src/components/Header';
-import PostList from './src/components/PostList';
-import PostDetail from './src/components/PostDetail';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import { Header, PostList } from './src/components/common';
+import reducers from './src/reducers';
 
 export default class App extends Component {
   render() {
     return (
-      <View>
-        <Header headerText={'redder'} />
-        <PostList />
-      </View>
-
+      <Provider store={createStore(reducers)}>
+        <View style={{ flex: 1 }}>
+          <Header headerText={'redder'} />
+          <PostList />
+        </View>
+      </Provider>
     );
   }
 }

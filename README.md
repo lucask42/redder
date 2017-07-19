@@ -5,11 +5,11 @@ tasks
 [N/A] authenticate using Oauth
 [X] get main page JSON using reddit API
 [X] Create a main screen that renders the basic content in a list
+[ ] store response locally for initial view using Redux Persist or AsyncStorage
 [ ] Use Redux to expand posts
 [ ] Use React Navigation to display entire posts
 [ ] Use back button to navigate back to main screen
 [ ] pull down to refresh
-[ ] store response locally for initial view using Redux Persist or AsyncStorage
 [ ] test on android
 [ ] test on iOS
 [ ] finish readme
@@ -19,8 +19,7 @@ tasks
 
 
 ## Table of Contents
-
-* [Available Scripts](#available-scripts)
+* [Install and Run](#install-and-run)
   * [npm start](#npm-start)
   * [npm run ios](#npm-run-ios)
   * [npm run android](#npm-run-android)
@@ -30,6 +29,15 @@ tasks
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
+## `Install and Run`
+
+Create a local clone of the respository
+
+Install the app's dependencies:
+
+```
+npm install
+```
 
 ### `npm start`
 

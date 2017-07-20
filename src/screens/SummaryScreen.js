@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Platform, TouchableOpacity } from 'react-native';
+import { Header, PostList } from '../components/common';
+
+
 
 class SummaryScreen extends Component {
   static navigationOptions = {
-    title: 'Summary'
-
+    header: null,
   }
 
-// success, this button navigates to another screen
+//
+
+
+
   render() {
-      const { navigate } = this.props.navigation;
-      return (
-        <View>
-          <Text>PLACEHOLDER TEXT</Text>
-          <Button
-            onPress={() => navigate('detail')}
-            title="Go To Detail Screen"
-          />
-        </View>
-      );
+    return (
+      <View>
+        <Header headerText={'redder'} />
+        <PostList />
+      </View>
+    );
   }
 }
+// headerRight: <Text>goright</Text>
+//
+// <TouchableOpacity onPress={() => navigate('detail')}>
+//
+// </TouchableOpacity>
 
 export default SummaryScreen;

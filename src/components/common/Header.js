@@ -1,7 +1,7 @@
 // Import libraries for making components
 
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Platform } from 'react-native';
 
 // Make a component
 const Header = (props) => {
@@ -21,7 +21,7 @@ const styles = {
     alignItems: 'center',
     height: 60,
     // status bar is 24 pixels tall
-    marginTop: 24
+    marginTop: Platform.OS === 'android' ? 24 : 0
   },
 
   textStyle: {

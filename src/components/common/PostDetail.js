@@ -1,39 +1,52 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image, TouchableHighlight, Dimensions } from 'react-native';
 import { Card, CardSection } from './';
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const PostDetail = ({ post }) => {
-  console.log(post);
-  const { title, author, thumbnail, url, ups } = post.data;
+
+  // console.log(post);
+  // const { navigate } = this.props.navigation;
+  //
+  // <Button
+  //   onPress={() => navigate('detail')}
+  //   title="Go To Detail Screen"
+  // />
+  const { title, author, thumbnail, ups } = post.data;
   const { thumbnailStyle,
           postContentStyle,
           thumbnailContainerStyle,
           titleTextStyle,
           authorTextStyle,
           upsStyle,
-          postAttributesStyle
+          postAttributesStyle,
+          cardStyle
         } = styles;
+        //<TouchableHighlight onPress={() => navigate('detail')}>
+        //</TouchableHighlight>
   return (
-    <Card>
-      <CardSection onPress={() => Linking.openURL(url)}>
-        <View style={thumbnailContainerStyle}>
-          <Image
-            style={thumbnailStyle}
-            source={{ uri: thumbnail }}
-          />
-        </View>
-        <View style={postContentStyle}>
-          <Text style={titleTextStyle}>{title}</Text>
-            <View style={postAttributesStyle}>
-              <Text style={authorTextStyle}>{author}</Text>
-              
-              <Text style={upsStyle}>{ups}</Text>
-            </View>
+// <TouchableHighlight onPress={this.props.onTouch} >
+      <Card style={cardStyle}>
+        <CardSection>
+          <View style={thumbnailContainerStyle}>
+            <Image
+              style={thumbnailStyle}
+              source={{ uri: thumbnail }}
+            />
+          </View>
+          <View style={postContentStyle}>
+            <Text style={titleTextStyle}>{title}</Text>
+              <View style={postAttributesStyle}>
+                <Text style={authorTextStyle}>{author}</Text>
 
-        </View>
-      </CardSection>
-    </Card>
+                <Text style={upsStyle}>{ups}</Text>
+              </View>
+
+          </View>
+        </CardSection>
+      </Card>
+// </TouchableHighlight>
   );
 };
 
@@ -70,6 +83,9 @@ const styles = {
   upsStyle: {
     fontSize: 8,
     color: '#000'
+  },
+  cardStyle: {
+    width: SCREEN_WIDTH
   }
 
 };

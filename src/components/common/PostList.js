@@ -4,6 +4,9 @@ import axios from 'axios';
 import { PostDetail } from './';
 
 class PostList extends Component {
+  onPostSelect = () => {
+    //this.props.nagivation.navigate('detail')
+  }
   state = { posts: [] };
 
   componentWillMount() {
@@ -20,7 +23,7 @@ class PostList extends Component {
 
   renderPosts() {
     return this.state.posts.map(post =>
-      <PostDetail key={post.data.subreddit_id} post={post} />
+      <PostDetail key={post.data.subreddit_id} post={post} onTouch={this.onPostSelect} />
     );
   }
 

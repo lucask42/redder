@@ -1,5 +1,7 @@
 import React from 'react';
 import { Text, View, Image, TouchableHighlight, Dimensions } from 'react-native';
+import { Icon } from 'react-native-elements';
+
 import { Card, CardSection } from './';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -13,7 +15,7 @@ const PostDetail = ({ post }) => {
   //   onPress={() => navigate('detail')}
   //   title="Go To Detail Screen"
   // />
-  const { title, author, thumbnail, ups } = post.data;
+  const { title, author, thumbnail, ups, subreddit_name_prefixed } = post.data;
   const { thumbnailStyle,
           postContentStyle,
           thumbnailContainerStyle,
@@ -21,7 +23,9 @@ const PostDetail = ({ post }) => {
           authorTextStyle,
           upsStyle,
           postAttributesStyle,
-          cardStyle
+          cardStyle,
+          upsContainerStyle,
+          subredditTextStyle
         } = styles;
         //<TouchableHighlight onPress={() => navigate('detail')}>
         //</TouchableHighlight>
@@ -39,8 +43,11 @@ const PostDetail = ({ post }) => {
             <Text style={titleTextStyle}>{title}</Text>
               <View style={postAttributesStyle}>
                 <Text style={authorTextStyle}>{author}</Text>
-
-                <Text style={upsStyle}>{ups}</Text>
+                <Text style={subredditTextStyle}>{subreddit_name_prefixed}</Text>
+                <View style={upsContainerStyle}>
+                  <Icon name='arrow-upward' size={10} color='#008000' />
+                  <Text style={upsStyle}>{ups}</Text>
+                </View>
               </View>
 
           </View>
@@ -53,7 +60,8 @@ const PostDetail = ({ post }) => {
 const styles = {
   postContentStyle: {
     flexDirection: 'column',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    flex: 1
   },
   thumbnailContainerStyle: {
     justifyContent: 'center',
@@ -78,7 +86,8 @@ const styles = {
     color: '#007aff'
   },
   postAttributesStyle: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   upsStyle: {
     fontSize: 8,
@@ -86,6 +95,12 @@ const styles = {
   },
   cardStyle: {
     width: SCREEN_WIDTH
+  },
+  upsContainerStyle: {
+    flexDirection: 'row'
+  },
+  subredditTextStyle: {
+    fontSize: 8
   }
 
 };

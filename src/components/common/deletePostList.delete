@@ -4,15 +4,10 @@ import axios from 'axios';
 import { PostDetail } from './';
 
 class PostList extends Component {
-  onPostSelect = () => {
-    //this.props.nagivation.navigate('detail')
-  }
   state = { posts: [] };
 
   componentWillMount() {
     axios.get('https://www.reddit.com/.json')
-    // .then(postsResponseToJson);
-    // axios.get('https://rallycoding.herokuapp.com/api/music_albums')
     .then(response => this.setState({ posts: response.data.data.children }));
   }
 
@@ -23,15 +18,15 @@ class PostList extends Component {
 
   renderPosts() {
     return this.state.posts.map(post =>
-      <PostDetail key={post.data.subreddit_id} post={post} onTouch={this.onPostSelect} />
+      <PostDetail key={post.data.subreddit_id} post={post} onPress={() =>
+        navigate('detail', { post })}
+      />
     );
   }
 
   render() {
     return (
-      <ScrollView>
-        {this.renderPosts()}
-      </ScrollView>
+
     );
   }
 

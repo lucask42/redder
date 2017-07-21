@@ -22,7 +22,16 @@ To run this app you will need a computer along with an iOS or Android mobile dev
 
 Before running this app.
   1) The mobile device and computer must be on the same wireless network.
-  2) The computer must have Node.js installed
+  2) The computer must have Node.js and npm installed.  You can verify by typing into the console:
+  
+```
+node -v
+```
+and
+```
+npm -v
+```
+
 
 ### `Install and Run`
 

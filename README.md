@@ -25,11 +25,11 @@ Before running this app.
   2) The computer must have Node.js and npm installed.  You can verify by typing into the console:
   
 ```
-node -v
+$ node -v
 ```
 and
 ```
-npm -v
+$ npm -v
 ```
 
 
@@ -43,12 +43,12 @@ Open your terminal and navigate to the folder that contains the cloned repo
 
 Install the app's dependencies:
 ```
-npm install
+$ npm install
 ```
 
 After the dependencies have all been downloaded run the start script:
 ```
-npm start
+$ npm start
 ```
 
 After a few moments you should see a QR Code.  Open the Expo app on your iOS or Android device and scan the barcode.
@@ -78,13 +78,13 @@ In some cases, this is less than ideal. This might be the case if you need to ru
 Mac and Linux:
 
 ```
-REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
+$ REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
 ```
 
 Windows:
 ```
-set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
-npm start
+$ set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
+$ npm start
 ```
 
 The above example would cause the development server to listen on `exp://my-custom-ip-address-or-hostname:19000`.

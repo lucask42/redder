@@ -1,24 +1,3 @@
-
-tasks
-[X] Create public github repo
-[N/A] authenticate using Oauth
-[X] Create a main screen that renders the basic content in a list
-[X] Use Redux to get data and update views
-[N/A] Use Redux to expand posts
-[X] Use React Navigation to change to detail screen
-[X] Use back button to navigate back to summary screen
-[X] Pull down to refresh
-[X] Add placeholder thumbnails for posts without thumbs
-[X] Add IOS navigation
-[ ] Store response locally for initial view using Redux Persist or AsyncStorage
-[X] Test on android
-[X] Test on iOS
-[ ] Finish this README
-[ ] Submit Friday
-
-[ ] Define a default image
-
-
 ## Table of Contents
 * [About](#about)
 * [Getting Started](#getting-started)
@@ -32,20 +11,22 @@ tasks
   * [QR Code does not scan](#qr-code-does-not-scan)
 
 ## `About`
+
 redder is a slim reddit reader mobile app built using React-Native and Redux.
 
 ## `Getting Started`
 
 ### `Prerequisites`
-To run this app you will need a computer along with an iOS or Android device.
+
+To run this app you will need a computer along with an iOS or Android mobile device.
 
 Before running this app.
-  1) The iOS or Android device should be on the same wireless network that will host the app.
-  2) The computer should have Node.js installed
-
-Install the Expo app on your iOS or Android device.
+  1) The mobile device and computer must be on the same wireless network.
+  2) The computer must have Node.js installed
 
 ### `Install and Run`
+
+Install the Expo app on your iOS or Android device.
 
 Create a local clone of the respository.
 
@@ -130,3 +111,23 @@ If you're not able to load the `http` URL in your phone's web browser, try using
 If you're not able to scan the QR code, make sure your phone's camera is focusing correctly, and also make sure that the contrast on the two colors in your terminal is high enough. For example, WebStorm's default themes may [not have enough contrast](https://github.com/react-community/create-react-native-app/issues/49) for terminal QR codes to be scannable with the system barcode scanners that the Expo app uses.
 
 If this causes problems for you, you may want to try changing your terminal's color theme to have more contrast, or running Create React Native App from a different terminal. You can also manually enter the URL printed by the packager script in the Expo app's search bar to load it manually.
+
+
+tasks
+[X] Create public github repo
+[N/A] authenticate using Oauth
+[X] Create a main screen that renders the basic content in a list
+[X] Use Redux to get data and update views
+[N/A] Use Redux to expand posts
+[X] Use React Navigation to change to detail screen
+[X] Use back button to navigate back to summary screen
+[X] Pull down to refresh
+[X] Add placeholder thumbnails for posts without thumbs
+[X] Add IOS navigation
+[ ] Store response locally for initial view using Redux Persist or AsyncStorage
+[X] Test on android
+[X] Test on iOS
+[X] Finish this README
+[X] Submit Friday
+
+[X] Define a default image

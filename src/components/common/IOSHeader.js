@@ -1,17 +1,19 @@
-import React from 'react';
-import { NavigatorIOS } from 'react-native';
+import React, { Component } from 'react';
+import { NavigatorIOS, View } from 'react-native';
 
-export class NavigatorIOSApp extends React.Component {
+class IOSHeader extends Component {
   render() {
     return (
-      <NavigatorIOS
-        initialRoute={{
-          component: MyScene,
-          title: 'My Initial Scene',
-          barTintColor: '#FFC0CB'
-        }}
-        style={{ flex: 1 }}
-      />
+      <View>
+        <NavigatorIOS
+          initialRoute={{
+            component: 'detail',
+            title: 'My Initial Scene',
+            barTintColor: '#FFC0CB'
+          }}
+          style={{ flex: 1 }}
+        />
+      </View>
     );
   }
 }

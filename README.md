@@ -24,34 +24,46 @@ tasks
 ## Table of Contents
 * [Install and Run](#install-and-run)
   * [npm start](#npm-start)
-  * [npm run ios](#npm-run-ios)
-  * [npm run android](#npm-run-android)
-  * [Configuring Packager IP Address](#configuring-packager-ip-address)
 * [Troubleshooting](#troubleshooting)
+  * [Configuring Packager IP Address](#configuring-packager-ip-address)
   * [Networking](#networking)
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
 ## `Install and Run`
 
-Install the Expo app on your iOS or android device
+### `Prerequisites`
+To run this app you will need a computer along with an iOS or android device.
+
+for running this app.
+  1) The iOS or android device must be on the same computer that will host the app.
+  2) The computer should have npm installed
+
+Install the Expo app on your iOS or android device.
+
+Note:  
 
 Create a local clone of the respository
 
 Open your terminal and navigate to the folder that contains the cloned repo
 
 Install the app's dependencies:
-
 ```
 npm install
 ```
 
-Build the project.  This may take a couple minutes.  If the request times-out watch the terminal and refresh your iOS or android device after the build has finished.
+After the dependencies have all been downloaded run the start script:
 ```
 npm start
 ```
 
-When the project is built you should see a QR Code 
+After a few moments you should see a QR Code.  Open the Expo app on your iOS or android device and scan the barcode.
+
+This will initiate a build of the project and this may take a couple minutes.  If the request times-out watch the terminal and refresh your iOS or android device after the build has finished.
+
+Upon refreshing or completion of the build the main screen of the app should display on your device.
+
+
 
 
 

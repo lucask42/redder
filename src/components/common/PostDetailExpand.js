@@ -17,8 +17,8 @@ const PostDetailExpand = ({ post }) => {
           postAttributesStyle,
           cardStyle,
           upsContainerStyle,
-          subredditTextStyle
-
+          subredditTextStyle,
+          buttonStyle
         } = styles;
 
   const openLink = () => { Linking.openURL('https://reddit.com' + permalink).catch(err => console.error('An error occurred', err)) };
@@ -26,10 +26,10 @@ const PostDetailExpand = ({ post }) => {
       <Card style={cardStyle}>
         <CardSection>
           <View style={thumbnailContainerStyle}>
-            <Image
-              style={thumbnailStyle}
-              source={{ uri: thumbnail }}
-            />
+            { thumbnail === 'default' ?
+            <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+            <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
+            }
           </View>
           <View style={postContentStyle}>
             <Text style={titleTextStyle}>{title}</Text>
@@ -45,11 +45,13 @@ const PostDetailExpand = ({ post }) => {
           </View>
         </CardSection>
         <CardSection>
-          <Button
-            onPress={openLink}
-            title="Read on reddit.com"
-            color="#FFBAC0"
-          />
+          <View style={buttonStyle}>
+            <Button
+              onPress={openLink}
+              title="Read on reddit.com"
+              color="#FFBAC0"
+            />
+          </View>
         </CardSection>
 
       </Card>
@@ -101,6 +103,12 @@ const styles = {
   },
   subredditTextStyle: {
     fontSize: 10
+  },
+  buttonStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center'
+
   }
 
 };

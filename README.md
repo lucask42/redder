@@ -11,7 +11,7 @@ tasks
 [X] Use back button to navigate back to summary screen
 [X] Pull down to refresh
 [X] Add placeholder thumbnails for posts without thumbs
-[ ] Add IOS navigation
+[X] Add IOS navigation
 [ ] Store response locally for initial view using Redux Persist or AsyncStorage
 [ ] Test on android
 [ ] Test on iOS

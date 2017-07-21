@@ -28,13 +28,20 @@ const PostDetail = ({ post }) => {
           subredditTextStyle
         } = styles;
 
+  const pattern = new RegExp('^(https)?');
+        //thumbnail === 'default' || 'image' ?
+        //!pattern.test(thumbnail) ?
   return (
       <Card style={cardStyle}>
         <CardSection>
           <View style={thumbnailContainerStyle}>
-              { thumbnail === 'default' ?
+              { thumbnail === 'self' ?
               <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
-              <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
+              (thumbnail === 'default' ? <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+              (thumbnail === 'image' ? <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+               <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
+              ))
+
               }
           </View>
           <View style={postContentStyle}>

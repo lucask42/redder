@@ -21,11 +21,13 @@ const styles = {
     alignItems: 'center',
     height: 60,
     // status bar is 24 pixels tall
-    marginTop: Platform.OS === 'android' ? 24 : 0
+    marginTop: Platform.OS === 'android' ? 24 : 0,
+    paddingTop: Platform.OS === 'android' ? 0 : 15,
   },
 
   textStyle: {
-    fontSize: 40
+    fontSize: 40,
+    marginBottom: Platform.OS === 'android' ? 0 : 5,
 
   }
 

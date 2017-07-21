@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { PostDetail } from '../components/common';
 
 class DetailScreen extends Component {
 
@@ -25,17 +27,17 @@ class DetailScreen extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <View>
-        <Text>DetailScreen</Text>
-        <Text>DetailScreen</Text>
-        <Text>DetailScreen</Text>
-        <Text>DetailScreen</Text>
-        <Text>DetailScreen</Text>
-        <Text>DetailScreen</Text>
+        <PostDetail post={this.props.posts1[this.props.navigation.state.params.postIndex]} />
       </View>
     );
   }
 }
 
-export default DetailScreen;
+const mapStateToProps = state => {
+  return { posts1: state.getReddit };
+};
+
+export default connect(mapStateToProps)(DetailScreen);

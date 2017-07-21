@@ -19,42 +19,6 @@ export function testAction() {
   };
 }
 
-
-export const selectLibrary = (libraryId) => {
-  return {
-    type: 'select_library',
-    payload: libraryId
-  };
-};
-
-
-
-
-// export const REQUEST_POSTS = (subreddit) => {
-//   return {
-//     type: 'REQUEST_POSTS',
-//     payload: subreddit
-//   };
-// };
-//
-//
-// export const RECEIVE_POSTS = (subreddit, json) => {
-//   return {
-//     type: RECEIVE_POSTS,
-//     subreddit,
-//     posts: json.data.children.map(child => child.data),
-//     receivedAt: Date.now()
-//   };
-// };
-//
-//
-//
-// axios.get('https://www.reddit.com/.json')
-// // .then(postsResponseToJson);
-// // axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-// .then(response => this.setState({ posts: response.data.data.children }));
-
-
 export const REQUEST_POSTS = 'REQUEST_POSTS';
 function requestPosts(subreddit) {
   return {

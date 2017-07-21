@@ -14,6 +14,7 @@ export default class App extends Component {
       detail: { screen: DetailScreen }
     });
 
+
     return (
       <Provider store={store}>
         <View style={{ flex: 1 }}>

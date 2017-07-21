@@ -2,20 +2,19 @@ redder is a slim reddit reader built using React-Native and Redux.
 This project is a coding challenge build-to-spec.
 
 tasks
+[X] Create public github repo
 [N/A] authenticate using Oauth
-[X] get main page JSON using reddit API
 [X] Create a main screen that renders the basic content in a list
-[ ] store response locally for initial view using Redux Persist or AsyncStorage
-[ ] Use Redux to expand posts
-[ ] Use React Navigation to display entire posts
-[ ] Use back button to navigate back to main screen
-[ ] pull down to refresh
-[ ] test on android
-[ ] test on iOS
-[ ] finish readme
-
-
-[ ] Submit by Friday
+[X] Use Redux to get data and update views
+[ ] Store response locally for initial view using Redux Persist or AsyncStorage
+[N/A] Use Redux to expand posts
+[X] Use React Navigation to change to detail screen
+[X] Use back button to navigate back to summary screen
+[ ] Pull down to refresh
+[ ] Test on android
+[ ] Test on iOS
+[ ] Finish readme
+[ ] Submit Friday
 
 
 ## Table of Contents

@@ -18,6 +18,6 @@ const store = createStore(
 //   .dispatch(fetchPosts('reactjs'))
 //   .then(() => console.log(store.getState()));
 //
-// persistStore(store, { storage: AsyncStorage, whitelist: ['posts']})
+// persistStore(store, { storage: AsyncStorage, whitelist: ['posts1']})
 
 export default store;

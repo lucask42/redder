@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Navigator } from 'react-native';
+import { View, ScrollView, Navigator, TouchableHighlight } from 'react-native';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 import { Header, PostDetail } from '../components/common';
 
@@ -8,16 +9,18 @@ class SummaryScreen extends Component {
   static navigationOptions = {
     header: null,
   }
-  state = { posts: [] };
 
-//
 componentWillMount() {
-  axios.get('https://www.reddit.com/.json')
-  .then(response => this.setState({ posts: response.data.data.children }));
+  this.props.getReddit();
 }
 renderPosts() {
-  return this.state.posts.map(post =>
-    <PostDetail key={post.data.subreddit_id} post={post} />
+  console.log(this.props);
+  return this.props.posts1.map((post, index) =>
+    <TouchableHighlight key={index} onPress={() => { this.props.navigation.navigate('detail', { postIndex: index }); }}>
+      <View>
+        <PostDetail post={post} />
+      </View>
+    </TouchableHighlight>
   );
 }
   render() {
@@ -38,4 +41,18 @@ renderPosts() {
 //
 // </TouchableOpacity>
 
-export default SummaryScreen;
+const mapDispatchToProps = (dispatch) => {
+  return { getReddit() {
+    axios.get('https://www.reddit.com/.json')
+    //.then(response => this.setState({ posts: response.data.data.children }));
+    .then(response => {
+      dispatch({ type: 'GET_REDDIT', data: response.data.data.children });
+    });
+  } };
+};
+
+const mapStateToProps = state => {
+  return { posts1: state.getReddit };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SummaryScreen);

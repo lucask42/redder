@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, TouchableHighlight, Dimensions } from 'react-native';
+import { Text, View, Image, Dimensions } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import { Card, CardSection } from './';
@@ -30,7 +30,6 @@ const PostDetail = ({ post }) => {
         //<TouchableHighlight onPress={() => navigate('detail')}>
         //</TouchableHighlight>
   return (
-// <TouchableHighlight onPress={this.props.onTouch} >
       <Card style={cardStyle}>
         <CardSection>
           <View style={thumbnailContainerStyle}>

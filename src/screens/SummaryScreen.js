@@ -26,7 +26,7 @@ class SummaryScreen extends Component {
     //});
   }
   renderPosts() {
-    console.log(this.props);
+    //console.log(this.props);
     return this.props.posts1.map((post, index) =>
       <TouchableHighlight
         key={index}

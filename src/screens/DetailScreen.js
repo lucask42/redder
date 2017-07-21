@@ -1,35 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text, Platform } from 'react-native';
+import { View, Platform } from 'react-native';
 import { Button } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { PostDetail } from '../components/common';
+import { PostDetail, Header} from '../components/common';
 
 class DetailScreen extends Component {
-
-  // if iOS
   static navigationOptions = {
-    title: 'Details',
-    headerLeft: ({ navigate }) => {
-      return {
-        left: (
-          <Button
-            title="Back"
-            onPress={() => navigate('summary')}
-            backgroundColor="rgba(0,0,0,0)"
-            color="rgba(0, 122, 255, 1)"
-          />
-        ),
-        style: {
-          marginTop: Platform.OS === 'android' ? 24 : 0
-        }
-      };
-    }
+    header: null,
   }
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
+    // Platform.OS === 'android' ? <Header headerText={'redder'} /> : <IOSheader>
     return (
+
+
       <View>
+        <Header headerText={'redder'} />
         <PostDetail post={this.props.posts1[this.props.navigation.state.params.postIndex]} />
       </View>
     );

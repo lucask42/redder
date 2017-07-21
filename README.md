@@ -10,11 +10,13 @@ tasks
 [N/A] Use Redux to expand posts
 [X] Use React Navigation to change to detail screen
 [X] Use back button to navigate back to summary screen
-[ ] Pull down to refresh
+[X] Pull down to refresh
 [ ] Test on android
 [ ] Test on iOS
 [ ] Finish readme
 [ ] Submit Friday
+
+[ ] Define a default image
 
 
 ## Table of Contents

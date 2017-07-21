@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Navigator, TouchableHighlight } from 'react-native';
+import { View, ScrollView, TouchableHighlight, RefreshControl } from 'react-native';
 import axios from 'axios';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import { Header, PostDetail } from '../components/common';
 
@@ -9,26 +9,50 @@ class SummaryScreen extends Component {
   static navigationOptions = {
     header: null,
   }
-
-componentWillMount() {
-  this.props.getReddit();
-}
-renderPosts() {
-  console.log(this.props);
-  return this.props.posts1.map((post, index) =>
-    <TouchableHighlight key={index} onPress={() => { this.props.navigation.navigate('detail', { postIndex: index }); }}>
-      <View>
-        <PostDetail post={post} />
-      </View>
-    </TouchableHighlight>
-  );
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      refreshing: false,
+    };
+  }
+  componentWillMount() {
+    this.props.getReddit();
+  }
+  onRefresh() {
+    this.setState({ refreshing: true });
+    this.props.getReddit();
+    //.then(() => {
+    this.setState({ refreshing: false });
+    //});
+  }
+  renderPosts() {
+    console.log(this.props);
+    return this.props.posts1.map((post, index) =>
+      <TouchableHighlight
+        key={index}
+        onPress={() => {
+        this.props.navigation.navigate('detail', { postIndex: index });
+        }}
+      >
+        <View>
+          <PostDetail post={post} />
+        </View>
+      </TouchableHighlight>
+    );
+  }
   render() {
     //const { navigate } = this.props.navigation;
     return (
       <View>
         <Header headerText={'redder'} />
-        <ScrollView>
+        <ScrollView
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.refreshing}
+              onRefresh={this.onRefresh.bind(this)}
+            />
+          }
+        >
           {this.renderPosts()}
         </ScrollView>
       </View>

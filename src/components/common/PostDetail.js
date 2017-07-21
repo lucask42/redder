@@ -27,16 +27,18 @@ const PostDetail = ({ post }) => {
           upsContainerStyle,
           subredditTextStyle
         } = styles;
-        //<TouchableHighlight onPress={() => navigate('detail')}>
-        //</TouchableHighlight>
+
   return (
       <Card style={cardStyle}>
         <CardSection>
           <View style={thumbnailContainerStyle}>
-            <Image
-              style={thumbnailStyle}
-              source={{ uri: thumbnail }}
-            />
+
+              { thumbnail === 'default' ?
+              <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+              <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
+              }
+
+
           </View>
           <View style={postContentStyle}>
             <Text style={titleTextStyle}>{title}</Text>

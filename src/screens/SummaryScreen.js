@@ -21,12 +21,9 @@ class SummaryScreen extends Component {
   onRefresh() {
     this.setState({ refreshing: true });
     this.props.getReddit();
-    //.then(() => {
     this.setState({ refreshing: false });
-    //});
   }
   renderPosts() {
-    //console.log(this.props);
     return this.props.posts1.map((post, index) =>
       <TouchableHighlight
         key={index}
@@ -41,7 +38,6 @@ class SummaryScreen extends Component {
     );
   }
   render() {
-    //const { navigate } = this.props.navigation;
     return (
       <View>
         <Header headerText={'redder'} />
@@ -59,16 +55,10 @@ class SummaryScreen extends Component {
     );
   }
 }
-// headerRight: <Text>goright</Text>
-//
-// <TouchableOpacity onPress={() => navigate('detail')}>
-//
-// </TouchableOpacity>
 
 const mapDispatchToProps = (dispatch) => {
   return { getReddit() {
     axios.get('https://www.reddit.com/.json')
-    //.then(response => this.setState({ posts: response.data.data.children }));
     .then(response => {
       dispatch({ type: 'GET_REDDIT', data: response.data.data.children });
     });

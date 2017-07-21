@@ -5,57 +5,53 @@ import { Icon } from 'react-native-elements';
 import { Card, CardSection } from './';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-
 const PostDetailExpand = ({ post }) => {
-  const { title, author, thumbnail, ups, subreddit_name_prefixed, permalink } = post.data;
-  const { thumbnailStyle,
-          postContentStyle,
-          thumbnailContainerStyle,
-          titleTextStyle,
-          authorTextStyle,
-          upsStyle,
-          postAttributesStyle,
-          cardStyle,
-          upsContainerStyle,
-          subredditTextStyle,
-          buttonStyle
-        } = styles;
+const { title, author, thumbnail, ups, subreddit_name_prefixed, permalink } = post.data;
+const { thumbnailStyle,
+        postContentStyle,
+        thumbnailContainerStyle,
+        titleTextStyle,
+        authorTextStyle,
+        upsStyle,
+        postAttributesStyle,
+        cardStyle,
+        upsContainerStyle,
+        subredditTextStyle,
+        buttonStyle
+      } = styles;
+const openLink = () => { Linking.openURL('https://reddit.com' + permalink).catch(err => console.error('An error occurred', err)) };
 
-  const openLink = () => { Linking.openURL('https://reddit.com' + permalink).catch(err => console.error('An error occurred', err)) };
-  return (
-      <Card style={cardStyle}>
-        <CardSection>
-          <View style={thumbnailContainerStyle}>
-            { thumbnail === 'default' ?
-            <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
-            <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
-            }
+return (
+  <Card style={cardStyle}>
+    <CardSection>
+      <View style={thumbnailContainerStyle}>
+        { thumbnail === 'default' ?
+        <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+        <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
+        }
+      </View>
+      <View style={postContentStyle}>
+        <Text style={titleTextStyle}>{title}</Text>
+          <View style={postAttributesStyle}>
+            <Text style={authorTextStyle}>{author}</Text>
+            <Text style={subredditTextStyle}>{subreddit_name_prefixed}</Text>
+            <View style={upsContainerStyle}>
+              <Icon name='arrow-upward' size={10} color='#008000' />
+              <Text style={upsStyle}>{ups}</Text>
+            </View>
           </View>
-          <View style={postContentStyle}>
-            <Text style={titleTextStyle}>{title}</Text>
-              <View style={postAttributesStyle}>
-                <Text style={authorTextStyle}>{author}</Text>
-                <Text style={subredditTextStyle}>{subreddit_name_prefixed}</Text>
-                <View style={upsContainerStyle}>
-                  <Icon name='arrow-upward' size={10} color='#008000' />
-                  <Text style={upsStyle}>{ups}</Text>
-                </View>
-              </View>
-
-          </View>
-        </CardSection>
-        <CardSection>
-          <View style={buttonStyle}>
-            <Button
-              onPress={openLink}
-              title="Read on reddit.com"
-              color="#FFBAC0"
-            />
-          </View>
-        </CardSection>
-
-      </Card>
-// </TouchableHighlight>
+        </View>
+      </CardSection>
+      <CardSection>
+        <View style={buttonStyle}>
+          <Button
+            onPress={openLink}
+            title="Read on reddit.com"
+            color="#FFBAC0"
+          />
+        </View>
+      </CardSection>
+    </Card>
   );
 };
 
@@ -108,10 +104,7 @@ const styles = {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center'
-
   }
-
 };
-
 
 export { PostDetailExpand };

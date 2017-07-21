@@ -5,60 +5,50 @@ import { Icon } from 'react-native-elements';
 import { Card, CardSection } from './';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-
 const PostDetail = ({ post }) => {
+const { title, author, thumbnail, ups, subreddit_name_prefixed } = post.data;
+const { thumbnailStyle,
+        postContentStyle,
+        thumbnailContainerStyle,
+        titleTextStyle,
+        authorTextStyle,
+        upsStyle,
+        postAttributesStyle,
+        cardStyle,
+        upsContainerStyle,
+        subredditTextStyle
+      } = styles;
 
-  // console.log(post);
-  // const { navigate } = this.props.navigation;
-  //
-  // <Button
-  //   onPress={() => navigate('detail')}
-  //   title="Go To Detail Screen"
-  // />
-  const { title, author, thumbnail, ups, subreddit_name_prefixed } = post.data;
-  const { thumbnailStyle,
-          postContentStyle,
-          thumbnailContainerStyle,
-          titleTextStyle,
-          authorTextStyle,
-          upsStyle,
-          postAttributesStyle,
-          cardStyle,
-          upsContainerStyle,
-          subredditTextStyle
-        } = styles;
+// below are nested ternary operators... not ideal but the posts without
+// thumbnails have a thumbnail value of 'self', 'default', or 'image' instead
+// of a URL.  I tried checking for a URL using RegExp but was having trouble
+// catching all valid URLs.
 
-  const pattern = new RegExp('^(https)?');
-        //thumbnail === 'default' || 'image' ?
-        //!pattern.test(thumbnail) ?
-  return (
-      <Card style={cardStyle}>
-        <CardSection>
-          <View style={thumbnailContainerStyle}>
-              { thumbnail === 'self' ?
-              <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
-              (thumbnail === 'default' ? <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
-              (thumbnail === 'image' ? <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
-               <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
-              ))
-
-              }
+return (
+  <Card style={cardStyle}>
+    <CardSection>
+      <View style={thumbnailContainerStyle}>
+        { thumbnail === 'self' ?
+        <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+        (thumbnail === 'default' ? <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+        (thumbnail === 'image' ? <Image style={thumbnailStyle} source={require('../../assets/reddit.png')} /> :
+        <Image style={thumbnailStyle} source={{ uri: thumbnail }} />
+        ))
+        }
+      </View>
+      <View style={postContentStyle}>
+        <Text style={titleTextStyle}>{title}</Text>
+          <View style={postAttributesStyle}>
+            <Text style={authorTextStyle}>{author}</Text>
+            <Text style={subredditTextStyle}>{subreddit_name_prefixed}</Text>
+            <View style={upsContainerStyle}>
+              <Icon name='arrow-upward' size={10} color='#008000' />
+              <Text style={upsStyle}>{ups}</Text>
+            </View>
           </View>
-          <View style={postContentStyle}>
-            <Text style={titleTextStyle}>{title}</Text>
-              <View style={postAttributesStyle}>
-                <Text style={authorTextStyle}>{author}</Text>
-                <Text style={subredditTextStyle}>{subreddit_name_prefixed}</Text>
-                <View style={upsContainerStyle}>
-                  <Icon name='arrow-upward' size={10} color='#008000' />
-                  <Text style={upsStyle}>{ups}</Text>
-                </View>
-              </View>
-
-          </View>
-        </CardSection>
-      </Card>
-// </TouchableHighlight>
+        </View>
+      </CardSection>
+    </Card>
   );
 };
 
@@ -107,7 +97,6 @@ const styles = {
   subredditTextStyle: {
     fontSize: 8
   }
-
 };
 
 

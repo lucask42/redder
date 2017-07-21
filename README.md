@@ -1,5 +1,3 @@
-redder is a slim reddit reader built using React-Native and Redux.
-This project is a coding challenge build-to-spec.
 
 tasks
 [X] Create public github repo
@@ -13,8 +11,8 @@ tasks
 [X] Add placeholder thumbnails for posts without thumbs
 [X] Add IOS navigation
 [ ] Store response locally for initial view using Redux Persist or AsyncStorage
-[ ] Test on android
-[ ] Test on iOS
+[X] Test on android
+[X] Test on iOS
 [ ] Finish this README
 [ ] Submit Friday
 
@@ -22,28 +20,34 @@ tasks
 
 
 ## Table of Contents
-* [Install and Run](#install-and-run)
-  * [npm start](#npm-start)
+* [About](#about)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Install and Run](#install-and-run)
 * [Troubleshooting](#troubleshooting)
-  * [Configuring Packager IP Address](#configuring-packager-ip-address)
+  * [Request timed out](#request-timed-out)
+  * [Localhost does not work](#localhost-does-not-work)
   * [Networking](#networking)
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
-## `Install and Run`
+## `About`
+redder is a slim reddit reader mobile app built using React-Native and Redux.
+
+## `Getting Started`
 
 ### `Prerequisites`
-To run this app you will need a computer along with an iOS or android device.
+To run this app you will need a computer along with an iOS or Android device.
 
-for running this app.
-  1) The iOS or android device must be on the same computer that will host the app.
-  2) The computer should have npm installed
+Before running this app.
+  1) The iOS or Android device should be on the same wireless network that will host the app.
+  2) The computer should have Node.js installed
 
-Install the Expo app on your iOS or android device.
+Install the Expo app on your iOS or Android device.
 
-Note:  
+### `Install and Run`
 
-Create a local clone of the respository
+Create a local clone of the respository.
 
 Open your terminal and navigate to the folder that contains the cloned repo
 
@@ -57,22 +61,19 @@ After the dependencies have all been downloaded run the start script:
 npm start
 ```
 
-After a few moments you should see a QR Code.  Open the Expo app on your iOS or android device and scan the barcode.
+After a few moments you should see a QR Code.  Open the Expo app on your iOS or Android device and scan the barcode.
 
-This will initiate a build of the project and this may take a couple minutes.  If the request times-out watch the terminal and refresh your iOS or android device after the build has finished.
-
-Upon refreshing or completion of the build the main screen of the app should display on your device.
-
-
-
-
-
-
-
+This will initiate a build of the project and this may take a couple minutes.  Once built the app should load and display on your device.
 
 ## Troubleshooting
 
-### Configuring Packager IP Address
+### Request timed out
+
+Expo waits until after you scan the barcode to start building the project.  Depending on several factors this build time can take minutes, meanwhile your device may time out.  If this happens watch the terminal window for the build to progress to 100% and then hit the refresh button in the Expo app on your device.
+
+Upon refreshing the main screen of the app should display on your device.
+
+### Localhost does not work
 
 When starting your project, you'll see something like this for your project URL:
 

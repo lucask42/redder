@@ -14,7 +14,6 @@ export default class App extends Component {
       detail: { screen: DetailScreen }
     });
 
-
     return (
       <Provider store={store}>
         <View style={{ flex: 1 }}>
@@ -24,6 +23,3 @@ export default class App extends Component {
     );
   }
 }
-//
-// <Header headerText={'redder'} />
-// <PostList />

@@ -13,11 +13,4 @@ const store = createStore(
   )
 );
 
-// store.dispatch(selectSubreddit('reactjs'));
-// store
-//   .dispatch(fetchPosts('reactjs'))
-//   .then(() => console.log(store.getState()));
-//
-// persistStore(store, { storage: AsyncStorage, whitelist: ['posts1']})
-
 export default store;

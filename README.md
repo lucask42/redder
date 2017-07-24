@@ -18,11 +18,13 @@ To run this app you will need to install the Expo app on an iOS or Android mobil
 
 ### `Install and Run`
 
-1) On a separate mobile or computer load up this webpage: https://expo.io/@lucask42/reddit
+After installing and opening the Expo app on your mobile - touch 'Scan QR Code' in the 'Projects' tab.  
 
-2) After installing and opening the Expo app on your mobile - touch 'Scan QR Code' in the 'Projects' tab.  
+Scan this code:
 
-Scanning the QR Code with the Expo app should load the project on your mobile device.
+![Expo QR Code](/src/assets/QRCode.png)
+
+
 
 
 

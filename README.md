@@ -35,23 +35,3 @@ Scanning the QR Code with the Expo app should load the project on your mobile de
 If you're not able to scan the QR code, make sure your phone's camera is focusing correctly, and also make sure that the contrast on the two colors in your terminal is high enough. For example, WebStorm's default themes may [not have enough contrast](https://github.com/react-community/create-react-native-app/issues/49) for terminal QR codes to be scannable with the system barcode scanners that the Expo app uses.
 
 If this causes problems for you, you may want to try changing your terminal's color theme to have more contrast, or running Create React Native App from a different terminal. You can also manually enter the URL printed by the packager script in the Expo app's search bar to load it manually.
-
-
-tasks
-[X] Create public github repo
-[N/A] authenticate using Oauth
-[X] Create a main screen that renders the basic content in a list
-[X] Use Redux to get data and update views
-[N/A] Use Redux to expand posts
-[X] Use React Navigation to change to detail screen
-[X] Use back button to navigate back to summary screen
-[X] Pull down to refresh
-[X] Add placeholder thumbnails for posts without thumbs
-[X] Add IOS navigation
-[ ] Store response locally for initial view using Redux Persist or AsyncStorage
-[X] Test on android
-[X] Test on iOS
-[X] Finish this README
-[X] Submit Friday
-
-[X] Define a default image
